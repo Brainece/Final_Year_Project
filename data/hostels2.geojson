@@ -1,0 +1,23 @@
+var hostels = {
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3857" } },
+                                                                                                                                  
+"features": [
+{ "type": "Feature", "properties": { "Available Rooms": 4, "Hostels": "Kivu Ladies Hostel", "Gender": "Female", "Meals": 2, "Amenities":["Laundry Area", "Wifi", "DSTV","Canteen", "Hot Water Showers", "Study Room"]  }, "geometry": { "type": "Point", "coordinates": [ 36.819704, -1.272726 ] } },
+{ "type": "Feature", "properties": { "Available Rooms": 5, "Hostels": "New Mawingu Ladies Hostels", "Gender": "Female", "Meals": 2 , "Amenities":["Laundry Area", "Wifi", "DSTV","Hot Water Showers", "Study Room"]}, "geometry": { "type": "Point", "coordinates": [ 36.820543, -1.272302 ] } },
+{ "type": "Feature", "properties": { "Available Spaces": 10, "Hostels": "Ngara Men\"s Hostels", "Gender": "Male", "Meals": 2, "Amenities": ["Laundry Area", "DSTV", "Hot Water Showers", "Study Room"] }, "geometry": { "type": "Point", "coordinates": [ 36.818942, -1.273571 ] } },
+{ "type": "Feature", "properties": { "Available Rooms": 6, "Hostels": "Shalom Girls Hostels", "Gender": "Female", "Meals": 2, "Amenities": ["Laundry Area", "Wifi", "DSTV", "Hot Water Showers", "Study Room"]  }, "geometry": { "type": "Point", "coordinates": [ 36.821237, -1.274106 ] } },
+{ "type": "Feature", "properties": { "Available Rooms": 1, "Hostels": "Modern Christian Girls Hostel", "Gender": "Female", "Meals": 2, "Amenities": ["LAundry Area", "Wifi", "DSTV", "Clinic", "Hot Water Showers", "Study Room"] }, "geometry": { "type": "Point", "coordinates": [ 36.822129, -1.275095 ] } },
+{ "type": "Feature", "properties": {"Available Rooms": 3, "Hostels": "Beverley Hills Hostels", "Gender": "Both", "Meals": 3, "Amenities": ["Hot Water Showers","Study Room"]  }, "geometry": { "type": "Point", "coordinates": [ 36.846247, -1.266585 ] } },
+{ "type": "Feature", "properties": {"Available Rooms": 7, "Hostels": "YWCA Hostels", "Gender": "Female", "Meals": 2, "Amenities":["Laundry Area","Wifi", "DSTV", "Hot Water Showers", "Study Room"]  }, "geometry": { "type": "Point", "coordinates": [ 36.813326, -1.285513 ] } },
+{ "type": "Feature", "properties": {"Available Rooms": 9, "Hostels": "Remix", "Gender": "Female", "Meals": 2, "Amenities": ["LAundry Area", "WIfi", "DSTV", "Hot Water Showers", "Study Room"]  }, "geometry": { "type": "Point", "coordinates": [ 36.83501, -1.273485 ] } },
+{ "type": "Feature", "properties": { "Available Rooms": 6,"Hostels": "PCEA Guest House", "Gender": "Female", "Meals": 2, "Amenities": ["Laundry Area", "Wifi","DSTV","Canteen", "Hot Water Showers"] }, "geometry": { "type": "Point", "coordinates": [ 36.822325, -1.309173 ] } },
+{ "type": "Feature", "properties": {"Available Rooms": 17, "Hostels": "Double A Hostels", "Gender": "Female", "Meals": 2 , "Amenities":["Laundry Area","DSTV", "Hot Water Showers", "Study Room"] }, "geometry": { "type": "Point", "coordinates": [ 36.831457, -1.273825 ] } },
+{ "type": "Feature", "properties": {"Available Rooms": 12, "Hostels": "Sun, Moon & Stars Hostel", "Gender": "Female", "Meals": 2, "Amenities":["Laundry Area"]}, "geometry": { "type": "Point", "coordinates": [ 36.832638, -1.273415 ] } },
+{ "type": "Feature", "properties": {"Available Rooms": 13, "Hostels": "Classique", "Gender": "Male", "Meals": 2, "Amenities": ["Wifi", "DSTV", "Hot Water Showers", "Pool Tables"] }, "geometry": { "type": "Point", "coordinates": [ 36.832528, -1.271158 ] } },
+{ "type": "Feature", "properties": {"Available Rooms": 15, "Hostels": "Lizco Girls Hostels", "Gender": "Female", "Meals": 2, "Amenities": ["DSTV","Hot Water Showers"] }, "geometry": { "type": "Point", "coordinates": [ 36.81948, -1.27304 ] } },
+{ "type": "Feature", "properties": {"Available Rooms": 0, "Hostels": "Hazina Hostels", "Gender": "Female", "Meals": 1, "Amenities":["Laundry Area","DSTV", "Hot Water Showers", "Study Room"] }, "geometry": { "type": "Point", "coordinates": [ 36.849918, -1.315293 ] } },
+{ "type": "Feature", "properties": {"Available Rooms": 2, "Hostels": "Sparklite Hostels", "Gender": "Female", "Meals": 2, "Amenities": ["DSTV","Pool Tables"]}, "geometry": {"type": "Point", "coordinates": [ 36.819637, -1.271944 ] } },
+{ "type": "Feature", "properties": {"Available Rooms": 6, "Hostels": "Treton Ladies Hostels", "Gender": "Female", "Meals": 2, "Amenities":["Laundry Area","DSTV","Hot Water Showers", "Study Room"]}, "geometry": { "type": "Point", "coordinates": [ 36.819104, -1.273656 ] } }
+]
+}
