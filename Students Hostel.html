@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Mapping Alternative Hostels for TUK Students</title>
+        <link rel="stylesheet" href="lib/Leaflet/leaflet.css"/>
+		<link rel="stylesheet" href="my_style.css" />
+        <script src="lib/Leaflet/leaflet.js"></script>
+		<script src="lib/Leaflet/leaflet-heat.js"></script>
+		<script src="data/Nairobi.geojson"></script>
+		<script src="data/places.js"></script>
+		<script src="data/hostels2.geojson"></script>
+	</head>
+    <body>
+		<div id="Header">
+			<h2>Mapping Alternative Accomodation Places for TUK Students</h2>
+		</div>
+		<div id="Description">
+			<h2>Information</h2>
+			<p>
+				This Web Map displays, some of the alternative hostels for TUK students located within a radius of 5km from the Institution.
+			</p>
+			<p>
+				The tiles, which serve as the base map have been obtained from open street maps as indicated in the attribution. 
+			</p>
+			<p>
+			    The layers included in the design are:-
+			</p>
+			<ul>
+				<li>the Nairobi county boundary data</li>
+				<li>a 5km radius circle whose center was at the university, defining the projects study area</li>
+				<li>heat map derived from the student’s accommodation places data, showing TUK’s students distribution across Nairobi County </li>
+				<li>hostels within the 5km radius</li>
+			</ul>
+			<p>
+				These layers can be turned on and off by checking and uncheking the checkboxes present in the layer controls group present in the upper right corner.
+			</p>	
+		</div>
+        <div id="map"></div>
+        <script>
+			function onEachFeature(feature, layer){
+				if(feature.properties && feature.properties["Hostels"]){
+					layer.bindPopup("<table border=\"1px\" style=\"border-collapse: collapse;\"><th colspan=\"2\" style = \"text-align: center; \">Basic Information</th><tr><td padding =\"3px\"><i><b>Name</i></b></td><td> " + feature.properties["Hostels"] + "</td></tr><tr><td><b><i>Gender Admitted</i></b></td><td> " + feature.properties["Gender"] + "</td></tr><tr><td><b><i>Available Room Spaces<i/></b></td><td>" + feature.properties["Available Rooms"] + "</td></tr><tr><td><b><i>Meals Offered Per Day<i></b></td><td> " +  feature.properties["Meals"] + "</td></tr></table>");
+				}
+			}
+			//Defining the source of the tiles to serve as the base map
+			tileLayer=  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> Contributors'
+            });
+			
+			//Declaring the container to hold the map
+            var map = L.map('map', {
+               layers: [tileLayer]
+            }).setView([-1.291200,36.824289], 13);
+          
+		   //Initializing Nairobi County Boundary Map
+           var boundary = L.geoJson(boundaries);
+			
+			//Defining the 5km buffer from the institution
+           var circleBuffer= L.circle([-1.291200,36.824289], 5000,{
+                color: 'red',
+                fillColor: '#f03',
+                fillOpacity: 0.1
+                });
+			
+			//Defining marker for the Technical University of Kenya
+			var marker = L.marker([-1.291724,36.824534]).addTo(map);
+			marker.bindPopup("<b>The Technical University of Kenya</b>");
+			marker.addTo(map);			
+				
+			//Heat map showing the distribution of the students accommodation places around institution
+			var heat = L.heatLayer(studentDistribution,{
+                radius: 20,
+                blur: 15,
+                maxZoom: 12
+			});
+			
+			var hostelsHolder = L.geoJson(hostels, {
+				onEachFeature: onEachFeature
+			});
+			//Defining map layers
+			
+			
+			//baseLayer
+			var baseLayer = {
+				"Base map": tileLayer
+			}
+			//Overlays 
+			var overlays = {
+				"Nairobi Boundary": boundary, 
+				"5km Buffer": circleBuffer,
+				"Student Distribution": heat,
+				"Hostels": hostelsHolder
+			};
+	
+			
+		   //Adding Layers to the Layers Control Group
+		   L.control.layers(baseLayer,overlays).addTo(map);
+			
+		 </script>
+    </body>
+</html>
+    
